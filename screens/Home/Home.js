@@ -1,18 +1,27 @@
 import React from 'react';
-import {SafeAreaView, Text, View} from 'react-native';
+import {SafeAreaView, View} from 'react-native';
 
-import Header from '../../components/Header/Header';
 import globalStyle from '../../assets/styles/globalStyle';
 import style from './style';
-import Button from '../../components/Button/Button';
+import SingleDonationItem from '../../components/SingleDonationItem/SingleDonationItem';
 
 const Home = () => {
   return (
     <SafeAreaView style={[globalStyle.backgroundWhite, globalStyle.flex]}>
-      <View>
-        <Header title={'Eric W.'} type={1} />
+      <View style={style.donationGrid}>
+        <SingleDonationItem
+          uri={require('../../assets/images/cactus.webp')}
+          badgeTitle={'Environment'}
+          donationTitle={'Tree Cactus Imitation'}
+          price={44}
+        />
+        <SingleDonationItem
+          uri={require('../../assets/images/cactus.webp')}
+          badgeTitle={'Environment'}
+          donationTitle={'Tree Cactus Imitation'}
+          price={44}
+        />
       </View>
-      <Button title="Donate" />
     </SafeAreaView>
   );
 };

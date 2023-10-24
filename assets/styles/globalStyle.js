@@ -2,7 +2,7 @@ import {StyleSheet} from 'react-native';
 
 const globalStyle = StyleSheet.create({
   backgroundWhite: {
-    backgroundWhite: '#FFF',
+    backgroundColor: '#FFF',
   },
   flex: {
     flex: 1,

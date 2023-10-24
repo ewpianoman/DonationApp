@@ -7,21 +7,24 @@ import {
 import {getFontFamily} from '../../assets/fonts/helper';
 
 const style = StyleSheet.create({
-  button: {
+  tab: {
     backgroundColor: '#2979F2',
     borderRadius: horizontalScale(50),
-    height: verticalScale(55),
+    height: verticalScale(50),
     justifyContent: 'center',
   },
-  disabled: {
-    opacity: 0.5,
+  inactiveTab: {
+    backgroundColor: '#F3F5F9',
   },
   title: {
     color: '#FFF',
     fontFamily: getFontFamily('Inter', '500'),
-    fontSize: scaleFontSize(16),
-    lineHeight: scaleFontSize(19),
+    fontSize: scaleFontSize(14),
+    lineHeight: scaleFontSize(17),
     textAlign: 'center',
+  },
+  inactiveTitle: {
+    color: '#79869F',
   },
 });
 

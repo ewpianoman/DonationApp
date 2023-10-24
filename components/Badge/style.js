@@ -7,20 +7,17 @@ import {
 import {getFontFamily} from '../../assets/fonts/helper';
 
 const style = StyleSheet.create({
-  button: {
-    backgroundColor: '#2979F2',
+  badge: {
+    backgroundColor: '#145855',
     borderRadius: horizontalScale(50),
-    height: verticalScale(55),
+    paddingVertical: verticalScale(5),
     justifyContent: 'center',
-  },
-  disabled: {
-    opacity: 0.5,
   },
   title: {
     color: '#FFF',
-    fontFamily: getFontFamily('Inter', '500'),
-    fontSize: scaleFontSize(16),
-    lineHeight: scaleFontSize(19),
+    fontFamily: getFontFamily('Inter', '600'),
+    fontSize: scaleFontSize(10),
+    lineHeight: scaleFontSize(13),
     textAlign: 'center',
   },
 });
