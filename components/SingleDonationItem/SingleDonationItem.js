@@ -1,5 +1,5 @@
 import React from 'react';
-import {Image, View} from 'react-native';
+import {Image, View, Pressable} from 'react-native';
 import PropTypes from 'prop-types';
 
 import Badge from '../Badge/Badge';
@@ -8,12 +8,18 @@ import style from './style';
 
 const SingleDonationItem = props => {
   return (
-    <View>
+    <Pressable
+      style={style.donationItem}
+      onPress={() => props.onPress(props.donationItemId)}>
       <View>
         <View style={style.badge}>
           <Badge title={props.badgeTitle} />
         </View>
-        <Image source={props.uri} style={style.image} resizeMode={'cover'} />
+        <Image
+          source={{uri: props.uri}}
+          style={style.image}
+          resizeMode={'cover'}
+        />
       </View>
       <View style={style.donationInfo}>
         <View style={style.title}>
@@ -22,6 +28,7 @@ const SingleDonationItem = props => {
             type={3}
             color={'#0A043C'}
             style={style.title}
+            numberOfLines={1}
           />
         </View>
         <View style={style.price}>
@@ -32,15 +39,21 @@ const SingleDonationItem = props => {
           />
         </View>
       </View>
-    </View>
+    </Pressable>
   );
 };
 
+SingleDonationItem.defaultProps = {
+  onPress: () => {},
+};
+
 SingleDonationItem.propTypes = {
+  donationItemId: PropTypes.number.isRequired,
   uri: PropTypes.any.isRequired,
   badgeTitle: PropTypes.string.isRequired,
   donationTitle: PropTypes.string.isRequired,
   price: PropTypes.number.isRequired,
+  onPress: PropTypes.func,
 };
 
 export default SingleDonationItem;

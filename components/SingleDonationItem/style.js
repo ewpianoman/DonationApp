@@ -7,8 +7,9 @@ import {
 import {getFontFamily} from '../../assets/fonts/helper';
 
 const style = StyleSheet.create({
+  donationItem: {},
   image: {
-    width: horizontalScale(155),
+    width: horizontalScale(142),
     height: verticalScale(170),
     borderRadius: scaleFontSize(20),
   },

@@ -1,0 +1,46 @@
+import React from 'react';
+import {useSelector} from 'react-redux';
+import {SafeAreaView, ScrollView, View, Image, Text} from 'react-native';
+
+import BackButton from '../../components/BackButton/BackButton';
+import Badge from '../../components/Badge/Badge';
+import Header from '../../components/Header/Header';
+
+import style from './style';
+import globalStyle from '../../assets/styles/globalStyle';
+import Button from '../../components/Button/Button';
+
+const SingleDonationItem = ({navigation, route}) => {
+  const donationItemInformation = useSelector(
+    state => state.donations.selectedDonationInformation,
+  );
+
+  const categoryInformation = route.params.categoryInformation;
+
+  return (
+    <SafeAreaView style={[globalStyle.backgroundWhite, globalStyle.flex]}>
+      <ScrollView
+        showsVerticalScrollIndicator={false}
+        style={style.pageContainer}>
+        <BackButton onPress={() => navigation.goBack()} />
+        <Image
+          source={{uri: donationItemInformation.image}}
+          resizeMode={'cover'}
+          style={style.donationItemImage}
+        />
+        <View style={style.badge}>
+          <Badge title={categoryInformation.name} />
+        </View>
+        <Header type={1} title={donationItemInformation.name} />
+        <Text style={style.description}>
+          {donationItemInformation.description}
+        </Text>
+      </ScrollView>
+      <View style={style.button}>
+        <Button title={'Donate'} onPress={() => {}} />
+      </View>
+    </SafeAreaView>
+  );
+};
+
+export default SingleDonationItem;
