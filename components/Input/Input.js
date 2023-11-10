@@ -13,18 +13,32 @@ const Input = props => {
       <TextInput
         style={style.input}
         value={value}
-        onChangeText={val => setValue(val)}
-        keyboardType={props.keyboardType ? props.keyboardType : null}
+        onChangeText={val => {
+          setValue(val);
+          props.onChangeText(val);
+        }}
+        keyboardType={props.keyboardType}
         autoCapitalize={props.autoCapitalize ? props.autoCapitalize : null}
+        secureTextEntry={props.secureTextEntry}
+        placeholder={props.placeholder ? props.placeholder : null}
       />
     </View>
   );
+};
+
+Input.defaultProps = {
+  onChangeText: () => {},
+  keyboardType: 'default',
+  secureTextEntry: false,
 };
 
 Input.propTypes = {
   label: PropTypes.string.isRequired,
   keyboardType: PropTypes.string,
   autoCapitalize: PropTypes.string,
+  secureTextEntry: PropTypes.bool,
+  placeholder: PropTypes.string,
+  onChangeText: PropTypes.func,
 };
 
 export default Input;

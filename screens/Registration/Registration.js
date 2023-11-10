@@ -1,24 +1,35 @@
 import React, {useState} from 'react';
-import {Pressable, SafeAreaView, ScrollView, View} from 'react-native';
+import {SafeAreaView, ScrollView, View} from 'react-native';
 
-import {Routes} from '../../navigation/Routes';
 import Input from '../../components/Input/Input';
 import style from './style';
 import globalStyle from '../../assets/styles/globalStyle';
 import Header from '../../components/Header/Header';
 import Button from '../../components/Button/Button';
+import BackButton from '../../components/BackButton/BackButton';
 
-const Login = ({navigation}) => {
+const Registration = ({navigation}) => {
+  const [fullName, setFullName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
   return (
     <SafeAreaView style={[globalStyle.backgroundWhite, globalStyle.flex]}>
+      <View style={style.backButton}>
+        <BackButton onPress={() => navigation.goBack()} />
+      </View>
       <ScrollView
         showsVerticalScrollIndicator={false}
         contentContainerStyle={globalStyle.marginHorizontal24}>
         <View style={[style.title, globalStyle.marginBottom24]}>
-          <Header title={'Welcome Back'} type={1} color={'#022150'} />
+          <Header title={'Hello and Welcome!'} type={1} color={'#022150'} />
+        </View>
+        <View style={globalStyle.marginBottom24}>
+          <Input
+            label={'First & Last Name'}
+            onChangeText={val => setFullName(val)}
+            placeholder={'Enter your name...'}
+          />
         </View>
         <View style={globalStyle.marginBottom24}>
           <Input
@@ -38,17 +49,12 @@ const Login = ({navigation}) => {
             placeholder={'••••••'}
           />
         </View>
-        <View style={[style.loginButton, globalStyle.marginBottom24]}>
-          <Button title={'Login'} />
+        <View style={[style.registrationButton, globalStyle.marginBottom24]}>
+          <Button title={'Register'} />
         </View>
-        <Pressable
-          style={style.registrationButton}
-          onPress={() => navigation.navigate(Routes.Registration)}>
-          <Header title={"Don't have an account?"} type={3} color={'#156CF7'} />
-        </Pressable>
       </ScrollView>
     </SafeAreaView>
   );
 };
 
-export default Login;
+export default Registration;

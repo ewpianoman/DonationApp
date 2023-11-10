@@ -1,9 +1,15 @@
 import {StyleSheet} from 'react-native';
-import {horizontalScale, verticalScale} from '../../assets/styles/scaling';
+import {verticalScale} from '../../assets/styles/scaling';
 
 const style = StyleSheet.create({
-  formContainer: {
-    marginHorizontal: horizontalScale(24),
+  title: {
+    marginTop: verticalScale(163),
+  },
+  loginButton: {
+    marginTop: verticalScale(37),
+  },
+  registrationButton: {
+    alignItems: 'center',
   },
 });
 
