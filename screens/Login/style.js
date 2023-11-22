@@ -1,5 +1,6 @@
 import {StyleSheet} from 'react-native';
-import {verticalScale} from '../../assets/styles/scaling';
+import {verticalScale, scaleFontSize} from '../../assets/styles/scaling';
+import {getFontFamily} from '../../assets/fonts/helper';
 
 const style = StyleSheet.create({
   title: {
@@ -10,6 +11,13 @@ const style = StyleSheet.create({
   },
   registrationButton: {
     alignItems: 'center',
+  },
+  error: {
+    fontFamily: getFontFamily('Inter', '500'),
+    fontSize: scaleFontSize(16),
+    color: '#EE0000',
+    marginTop: verticalScale(24),
+    textAlign: 'center',
   },
 });
 
