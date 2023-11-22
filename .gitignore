@@ -66,4 +66,4 @@ yarn-error.log
 /coverage
 
 # Firebase
-/ios/GoogleService-Info.plist
+GoogleService-Info.plist
