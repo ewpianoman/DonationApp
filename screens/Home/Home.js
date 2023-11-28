@@ -65,10 +65,7 @@ const Home = ({navigation}) => {
           <View>
             <Text style={style.headerIntroText}>Hello,</Text>
             <View style={style.userName}>
-              <Header
-                color={'#022150'}
-                title={`${user.firstName} ${user.lastName[0]}. 👋`}
-              />
+              <Header color={'#022150'} title={`${user.displayName}  👋`} />
             </View>
           </View>
           <Image
