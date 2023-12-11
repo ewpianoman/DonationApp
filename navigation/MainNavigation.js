@@ -8,13 +8,22 @@ import Home from '../screens/Home/Home';
 import SingleDonationItem from '../screens/SingleDonationItem/SingleDonationItem';
 
 const Stack = createStackNavigator();
-const MainNavigation = () => {
+export const NonAuthenticated = () => {
   return (
     <Stack.Navigator
       initialRouteName={Routes.Login}
       screenOptions={{head: () => null, headerShown: false}}>
       <Stack.Screen name={Routes.Registration} component={Registration} />
       <Stack.Screen name={Routes.Login} component={Login} />
+    </Stack.Navigator>
+  );
+};
+
+export const Authenticated = () => {
+  return (
+    <Stack.Navigator
+      initialRouteName={Routes.Home}
+      screenOptions={{head: () => null, headerShown: false}}>
       <Stack.Screen name={Routes.Home} component={Home} />
       <Stack.Screen
         name={Routes.SingleDonationItem}
@@ -23,5 +32,3 @@ const MainNavigation = () => {
     </Stack.Navigator>
   );
 };
-
-export default MainNavigation;

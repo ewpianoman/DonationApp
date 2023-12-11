@@ -23,10 +23,15 @@ const style = StyleSheet.create({
   userName: {
     marginTop: verticalScale(5),
   },
+  profileImageContainer: {
+    alignItems: 'center',
+  },
+
   profileImage: {
     width: horizontalScale(50),
     height: horizontalScale(50),
     borderRadius: scaleFontSize(50),
+    marginBottom: verticalScale(5),
   },
   searchBox: {
     marginHorizontal: horizontalScale(24),

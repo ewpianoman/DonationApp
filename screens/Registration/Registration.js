@@ -59,14 +59,14 @@ const Registration = ({navigation}) => {
             isDisabled={
               fullName.length <= 2 || email.length <= 5 || password.length <= 8
             }
-            title={'Register'}
+            title={'Create Account'}
             onPress={async () => {
               let user = await createUser(fullName, email, password);
               if (user.error) {
                 setError(user.error);
               } else {
                 setError('');
-                setSuccess('You have successfully registered.');
+                setSuccess('You have successfully created an account.');
                 setTimeout(() => navigation.goBack(), 3000);
               }
             }}
